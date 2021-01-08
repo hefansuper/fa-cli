@@ -1,4 +1,5 @@
 import { Redirect } from "react-router-dom";
+import { ReactNode } from "react";
 
 import Home from "../pages/Home/index";
 import Hello from "../pages/Hello/index";
@@ -8,7 +9,7 @@ const _routes = [
   {
     path: "/",
     exact: true,
-    render: () => <Redirect to={"/home"} />,
+    render: (): ReactNode => <Redirect to={"/home"} />,
   },
   {
     path: "/home",
