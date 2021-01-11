@@ -1,6 +1,6 @@
 {
   "name": "my-cli-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -22,11 +22,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run lint && react-scripts build",
+    "build": "rm -rf prod/* && npm run lint && npm run version && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "//": "所有文件下最大的warning为0,否则会退出. .为所有的文件，且必传",
-    "lint": "eslint . --max-warnings 0"
+    "//": "所有文件下最大的warning为0,后面的参数为检验的的文件",
+    "lint": "eslint --ext js,jsx,ts,tsx --max-warnings 0",
+    "//1": "生成changelog的文件",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
+    "conventional-changelog": "^3.1.24",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.17.0",
     "husky": "^4.3.7"
