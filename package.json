@@ -59,6 +59,7 @@
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "husky": "^4.3.7",
+    "lint-staged": ">=10",
     "prettier": "^2.2.1"
   },
   "config": {
@@ -68,7 +69,17 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "//": "这里需要注意 ESLint 脚本的 --max-warnings 0,否则就算存在 warning 也不会终止提交行为,这里追加了 Prettier 的自动格式化，确保代码提交之前所有的格式能够修复",
+    "*.ts": [
+      "npm run lint",
+      "npm run prettier"
+    ],
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
