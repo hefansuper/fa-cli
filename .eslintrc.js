@@ -2,7 +2,7 @@
  * @Author: stephenHe
  * @Date: 2021-01-08 11:02:51
  * @LastEditors: stephenHe
- * @LastEditTime: 2021-01-08 11:36:12
+ * @LastEditTime: 2021-01-11 18:39:55
  * @Description:  eslint 的配置文件。
  * @FilePath: /my-cli-app/.eslintrc.js
  */
@@ -20,5 +20,10 @@ module.exports = {
         // ESLint 内置的推荐校验规则配置
         "eslint:recommended",
         // TypeScript 推荐校验规则配置
-        "plugin:@typescript-eslint/recommended"],
+        "plugin:@typescript-eslint/recommended",
+        // 用于关闭 ESLint 相关的格式规则集，具体可查看 https://github.com/prettier/eslint-config-prettier/blob/master/index.js
+        "prettier",
+        // 用于关闭 @typescript-eslint/eslint-plugin 插件相关的格式规则集，具体可查看 https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
+        "prettier/@typescript-eslint",
+    ],
 };

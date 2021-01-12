@@ -28,7 +28,8 @@
     "//": "所有文件下最大的warning为0,后面的参数为检验的的文件",
     "lint": "eslint --ext js,jsx,ts,tsx --max-warnings 0",
     "//1": "生成changelog的文件",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "prettier": "prettier src --write"
   },
   "eslintConfig": {
     "extends": [
@@ -56,7 +57,9 @@
     "conventional-changelog": "^3.1.24",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.17.0",
-    "husky": "^4.3.7"
+    "eslint-config-prettier": "^7.1.0",
+    "husky": "^4.3.7",
+    "prettier": "^2.2.1"
   },
   "config": {
     "commitizen": {
