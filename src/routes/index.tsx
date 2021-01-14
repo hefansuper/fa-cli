@@ -1,22 +1,22 @@
-import { Redirect } from "react-router-dom";
-import { ReactNode } from "react";
+import { Redirect } from 'react-router-dom';
+import { ReactNode } from 'react';
 
-import Home from "../pages/Home/index";
-import Hello from "../pages/Hello/index";
+import Home from '../pages/Home/index';
+import Hello from '../pages/Hello/index';
 
 const _routes = [
   // 重置路由
   {
-    path: "/",
+    path: '/',
     exact: true,
-    render: (): ReactNode => <Redirect to={"/home"} />,
+    render: (): ReactNode => <Redirect to={'/home'} />,
   },
   {
-    path: "/home",
+    path: '/home',
     component: Home,
   },
   {
-    path: "/hello",
+    path: '/hello',
     component: Hello,
   },
 ];

@@ -29,7 +29,7 @@
     "lint": "eslint --ext js,jsx,ts,tsx --max-warnings 0",
     "//1": "生成changelog的文件",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "prettier": "prettier src --write"
+    "prettier": "prettier \"./**/*\" --write"
   },
   "eslintConfig": {
     "extends": [
