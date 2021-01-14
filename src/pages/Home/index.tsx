@@ -5,14 +5,6 @@ function Home() {
 
   var a = 0;
 
-
-
-
-
-
-
-  
-
   return <div className="Home">home</div>;
 }
 export default React.memo(Home);
